@@ -2,16 +2,21 @@
   <head>
 
     <!-- font awesome from BootstrapCDN -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<!--     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
 
     <!-- compiled CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/ng-boilerplate-0.3.1.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/mobile-angular-ui/dist/css/mobile-angular-ui-base.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css" />
+    <link rel="stylesheet" type="text/css" href="assets/main.css" />
 
     <!-- compiled JavaScript -->
     <script type="text/javascript" src="vendor/angular/angular.js"></script>
     <script type="text/javascript" src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="vendor/angular-ui-utils/ui-utils.js"></script>
+    <script type="text/javascript" src="vendor/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
+    <script type="text/javascript" src="vendor/mobile-angular-ui/dist/js/mobile-angular-ui-touch-fastclick.min.js"></script>
+    <script type="text/javascript" src="vendor/mobile-angular-ui/dist/js/mobile-angular-ui-scrollable-overthrow.min.js"></script>
     <script type="text/javascript" src="src/app/app.js"></script>
     <script type="text/javascript" src="src/app/compare/compare.js"></script>
     <script type="text/javascript" src="src/app/home/home.js"></script>
@@ -21,7 +26,11 @@
     <script type="text/javascript" src="templates-app.js"></script>
 
   </head>
-  <body>
-    <ui-view></ui-view>
+  <body ng-controller="MainCtrl">
+  	<div ng-include="'main/directive/sidebar.tpl.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
+    <div class="app">
+      <div ng-include="'main/nav_top.tpl.html'"></div>
+      <ui-view></ui-view>
+    <div>
   </body>
 </html>

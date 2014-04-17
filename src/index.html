@@ -2,7 +2,7 @@
   <head>
 
     <!-- font awesome from BootstrapCDN -->
-    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+<!--     <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
 
     <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
     <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
@@ -11,7 +11,11 @@
     <script type="text/javascript" src="<%= file %>"></script><% }); %>
 
   </head>
-  <body>
-    <ui-view></ui-view>
+  <body ng-controller="MainCtrl">
+  	<div ng-include="'main/directive/sidebar.tpl.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
+    <div class="app">
+      <div ng-include="'main/nav_top.tpl.html'"></div>
+      <ui-view></ui-view>
+    <div>
   </body>
 </html>

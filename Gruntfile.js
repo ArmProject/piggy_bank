@@ -245,7 +245,7 @@ module.exports = function ( grunt ) {
     recess: {
       build: {
         src: [ '<%= app_files.less %>' ],
-        dest: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css',
+        dest: '<%= build_dir %>/assets/main.css',
         options: {
           compile: true,
           compress: false,

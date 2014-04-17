@@ -20,16 +20,16 @@ module.exports = {
    * app's unit tests.
    */
   app_files: {
-    js: [ 'src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js' ],
-    jsunit: [ 'src/**/*.spec.js' ],
-    
-    coffee: [ 'src/**/*.coffee', '!src/**/*.spec.coffee' ],
-    coffeeunit: [ 'src/**/*.spec.coffee' ],
+    js: ['src/**/*.js', '!src/**/*.spec.js', '!src/assets/**/*.js'],
+    jsunit: ['src/**/*.spec.js'],
 
-    atpl: [ 'src/app/**/*.tpl.html' ],
-    ctpl: [ 'src/common/**/*.tpl.html' ],
+    coffee: ['src/**/*.coffee', '!src/**/*.spec.coffee'],
+    coffeeunit: ['src/**/*.spec.coffee'],
 
-    html: [ 'src/index.html' ],
+    atpl: ['src/app/**/*.tpl.html'],
+    ctpl: ['src/common/**/*.tpl.html'],
+
+    html: ['src/index.html'],
     less: 'src/less/main.less'
   },
 
@@ -66,11 +66,20 @@ module.exports = {
       'vendor/angular-bootstrap/ui-bootstrap-tpls.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/ui-utils.js',
-      'vendor/jquery/dist/jquery.js'
+      // 'vendor/angular-animate/angular-animate.js',
+      'vendor/mobile-angular-ui/dist/js/mobile-angular-ui.min.js',
+      'vendor/mobile-angular-ui/dist/js/mobile-angular-ui-touch-fastclick.min.js',
+      'vendor/mobile-angular-ui/dist/js/mobile-angular-ui-scrollable-overthrow.min.js',
+      'vendor/jquery/dist/jquery.js',
+
+      // 'vendor/font-awesome/css/font-awesome.min.css',
+      // 'vendor/font-awesome/fonts/*',
+      'vendor/mobile-angular-ui/dist/css/mobile-angular-ui-base.css',
+      'vendor/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css',
+      'vendor/mobile-angular-ui/dist/fonts/*'
     ],
     css: [
     ],
-    assets: [
-    ]
+    assets: []
   },
 };
