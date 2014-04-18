@@ -1,4 +1,4 @@
-angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/item.tpl.html', 'profile/profile.tpl.html']);
+angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/item.tpl.html', 'profile/directive/remove.tpl.html', 'profile/profile.tpl.html']);
 
 angular.module("compare/compare.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("compare/compare.tpl.html",
@@ -95,7 +95,7 @@ angular.module("profile/directive/add.tpl.html", []).run(["$templateCache", func
   $templateCache.put("profile/directive/add.tpl.html",
     "<div ng-controller=\"AddCtrl\">\n" +
     "	<div ng-click=\"add()\" class=\"btn btn-navbar\">\n" +
-    "		Add\n" +
+    "		<i class=\"fa fa-plus-square\"></i> Add\n" +
     "	</div>\n" +
     "</div>");
 }]);
@@ -103,6 +103,15 @@ angular.module("profile/directive/add.tpl.html", []).run(["$templateCache", func
 angular.module("profile/directive/item.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("profile/directive/item.tpl.html",
     "<div>item</div>");
+}]);
+
+angular.module("profile/directive/remove.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("profile/directive/remove.tpl.html",
+    "<div ng-controller=\"RemoveCtrl\">\n" +
+    "	<div ng-click=\"remove()\" class=\"btn btn-navbar\">\n" +
+    "		<i class=\"fa fa-trash-o\"></i> Remove\n" +
+    "	</div>\n" +
+    "</div>");
 }]);
 
 angular.module("profile/profile.tpl.html", []).run(["$templateCache", function($templateCache) {
