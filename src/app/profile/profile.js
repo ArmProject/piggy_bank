@@ -8,11 +8,6 @@ app.controller('ProfileCtrl', ['$scope',
 		});
 	}
 ]);
-app.controller('AddCtrl', ['$scope', function($scope){
-	$scope.add = function(){
-		console.log("add");
-	};
-}]);
 app.controller('RemoveCtrl', ['$scope', function($scope){
 	$scope.remove = function(){
 		console.log("remove");

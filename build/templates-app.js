@@ -1,4 +1,4 @@
-angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/item.tpl.html', 'profile/directive/remove.tpl.html', 'profile/profile.tpl.html']);
+angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/item.tpl.html', 'profile/directive/remove.tpl.html', 'profile/profile.tpl.html', 'profile/profile_add.tpl.html']);
 
 angular.module("compare/compare.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("compare/compare.tpl.html",
@@ -63,8 +63,8 @@ angular.module("main/directive/sidebar.tpl.html", []).run(["$templateCache", fun
 
 angular.module("main/nav_bottom.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("main/nav_bottom.tpl.html",
-    "<div class=\"navbar navbar-app navbar-absolute-bottom\" ng-show=\"haveNavBottom\">\n" +
-    "		<div class=\"btn-group pull-left\">\n" +
+    "<div>\n" +
+    "	<div class=\"btn-group pull-left\">\n" +
     "		<div ng-include=\"data.navBottomLeft\"></div>\n" +
     "	</div>\n" +
     "	<div class=\"btn-group pull-right\">\n" +
@@ -75,17 +75,14 @@ angular.module("main/nav_bottom.tpl.html", []).run(["$templateCache", function($
 
 angular.module("main/nav_top.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("main/nav_top.tpl.html",
-    "<div class=\"navbar navbar-app navbar-absolute-top\">\n" +
-    "	<div class=\"navbar-brand navbar-brand-center\">\n" +
-    "		{{data.title}}\n" +
-    "	</div>\n" +
-    "\n" +
-    "	<div class=\"btn-group pull-left\">\n" +
-    "		<div ng-include=\"data.navTopLeft\"></div>\n" +
-    "	</div>\n" +
-    "	<div class=\"btn-group pull-right\">\n" +
-    "		<div ng-include=\"data.navTopRight\"></div>\n" +
-    "	</div>\n" +
+    "<div class=\"navbar-brand navbar-brand-center\">\n" +
+    "	{{data.title}}\n" +
+    "</div>\n" +
+    "<div class=\"btn-group pull-left\">\n" +
+    "	<div ng-include=\"data.navTopLeft\"></div>\n" +
+    "</div>\n" +
+    "<div class=\"btn-group pull-right\">\n" +
+    "	<div ng-include=\"data.navTopRight\"></div>\n" +
     "</div>\n" +
     "\n" +
     "");
@@ -93,11 +90,10 @@ angular.module("main/nav_top.tpl.html", []).run(["$templateCache", function($tem
 
 angular.module("profile/directive/add.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("profile/directive/add.tpl.html",
-    "<div ng-controller=\"AddCtrl\">\n" +
-    "	<div ng-click=\"add()\" class=\"btn btn-navbar\">\n" +
-    "		<i class=\"fa fa-plus-square\"></i> Add\n" +
-    "	</div>\n" +
-    "</div>");
+    "<div class=\"btn btn-navbar\" ui-sref=\"profile_add\">\n" +
+    "	<i class=\"fa fa-plus-square\"></i> Add\n" +
+    "</div>\n" +
+    "");
 }]);
 
 angular.module("profile/directive/item.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -117,4 +113,9 @@ angular.module("profile/directive/remove.tpl.html", []).run(["$templateCache", f
 angular.module("profile/profile.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("profile/profile.tpl.html",
     "");
+}]);
+
+angular.module("profile/profile_add.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("profile/profile_add.tpl.html",
+    "<div>add profile</div>");
 }]);

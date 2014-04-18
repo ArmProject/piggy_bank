@@ -23,6 +23,7 @@
     <script type="text/javascript" src="src/app/main/directive/directive.js"></script>
     <script type="text/javascript" src="src/app/main/main.js"></script>
     <script type="text/javascript" src="src/app/profile/profile.js"></script>
+    <script type="text/javascript" src="src/app/service/compare.js"></script>
     <script type="text/javascript" src="templates-common.js"></script>
     <script type="text/javascript" src="templates-app.js"></script>
 
@@ -30,9 +31,15 @@
   <body ng-controller="MainCtrl">
   	<div ng-include="'main/directive/sidebar.tpl.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
     <div class="app">
-      <div ng-include="'main/nav_top.tpl.html'"></div>
-      <div ng-include="'main/nav_bottom.tpl.html'"></div>
-      <ui-view></ui-view>      
+    	<div class="navbar navbar-app navbar-absolute-top">
+      	<div ng-include="'main/nav_top.tpl.html'"></div>
+    	</div>
+    	<div ng-show="haveNavBottom" class="navbar navbar-app navbar-absolute-bottom">
+      	<div ng-include="'main/nav_bottom.tpl.html'"></div>
+    	</div>
+      <div class="app-body">
+     		<ui-view></ui-view>    
+      <div>
     <div>
   </body>
 </html>
