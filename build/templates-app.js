@@ -1,4 +1,4 @@
-angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/item.tpl.html', 'profile/profile.tpl.html']);
+angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/item.tpl.html', 'profile/profile.tpl.html']);
 
 angular.module("compare/compare.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("compare/compare.tpl.html",
@@ -61,6 +61,18 @@ angular.module("main/directive/sidebar.tpl.html", []).run(["$templateCache", fun
     "</div>");
 }]);
 
+angular.module("main/nav_bottom.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("main/nav_bottom.tpl.html",
+    "<div class=\"navbar navbar-app navbar-absolute-bottom\" ng-show=\"haveNavBottom\">\n" +
+    "		<div class=\"btn-group pull-left\">\n" +
+    "		<div ng-include=\"data.navBottomLeft\"></div>\n" +
+    "	</div>\n" +
+    "	<div class=\"btn-group pull-right\">\n" +
+    "		<div ng-include=\"data.navBottomRight\"></div>\n" +
+    "	</div>\n" +
+    "</div>");
+}]);
+
 angular.module("main/nav_top.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("main/nav_top.tpl.html",
     "<div class=\"navbar navbar-app navbar-absolute-top\">\n" +
@@ -69,10 +81,10 @@ angular.module("main/nav_top.tpl.html", []).run(["$templateCache", function($tem
     "	</div>\n" +
     "\n" +
     "	<div class=\"btn-group pull-left\">\n" +
-    "		<div ng-include=\"data.menuLeft\"></div>\n" +
+    "		<div ng-include=\"data.navTopLeft\"></div>\n" +
     "	</div>\n" +
     "	<div class=\"btn-group pull-right\">\n" +
-    "		<div ng-include=\"data.menuRight\"></div>\n" +
+    "		<div ng-include=\"data.navTopRight\"></div>\n" +
     "	</div>\n" +
     "</div>\n" +
     "\n" +

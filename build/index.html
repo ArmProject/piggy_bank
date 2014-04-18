@@ -20,6 +20,7 @@
     <script type="text/javascript" src="src/app/app.js"></script>
     <script type="text/javascript" src="src/app/compare/compare.js"></script>
     <script type="text/javascript" src="src/app/home/home.js"></script>
+    <script type="text/javascript" src="src/app/main/directive/directive.js"></script>
     <script type="text/javascript" src="src/app/main/main.js"></script>
     <script type="text/javascript" src="src/app/profile/profile.js"></script>
     <script type="text/javascript" src="templates-common.js"></script>
@@ -30,7 +31,8 @@
   	<div ng-include="'main/directive/sidebar.tpl.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
     <div class="app">
       <div ng-include="'main/nav_top.tpl.html'"></div>
-      <ui-view></ui-view>
+      <div ng-include="'main/nav_bottom.tpl.html'"></div>
+      <ui-view></ui-view>      
     <div>
   </body>
 </html>
