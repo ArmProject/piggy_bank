@@ -3,17 +3,19 @@
 		<div bs-panel>
 			<input type="text" ng-model="data.name" label="Name" bs-input />
 			<input type="text" ng-model="data.owner" label="Owner" bs-input />
-			<input type="text" ng-model="data.name" label="Name" bs-input />
 			<input type="text" ng-model="data.type" label="Type" href="#type" toggle="on" readonly="readonly" bs-input />
 		</div>
 		<div overlay="type">
-			<h4 class="overlay-title">First Overlay</h4>    
+			<h4 class="overlay-title">Type</h4>    
 			<div class="list-group">
-				<a class="list-group-item" ng-click="data.type='aaa'" href="#type" toggle="off">
-					Edit Data 
+				<a class="list-group-item" ng-click="data.type = service.type.FUND.title" href="#type" toggle="off">
+					{{service.type.FUND.title}}
 				</a>
-				<a class="list-group-item" ng-click="data.type='aaa'" href="#type" toggle="off">
-					Check Balance 
+				<a class="list-group-item" ng-click="data.type = service.type.LOTTERY.title" href="#type" toggle="off">
+					{{service.type.LOTTERY.title}}
+				</a>
+				<a class="list-group-item" ng-click="data.type = service.type.BOND.title" href="#type" toggle="off">
+					{{service.type.BOND.title}}
 				</a>
 			</div>  
 		</div>

@@ -6,8 +6,6 @@ app.controller('ProfileCtrl', ['$scope', '$localStorage', 'ProfileService',
 			navTopRight: 'profile/directive/add.tpl.html',
 			navBottomRight: 'profile/directive/remove.tpl.html'
 		});
-		$scope.service = ProfileService;
-
 		if (angular.isUndefined($localStorage.profile)) {
 			$localStorage.$default({
 				profile: [{
@@ -15,19 +13,21 @@ app.controller('ProfileCtrl', ['$scope', '$localStorage', 'ProfileService',
 				}]
 			});
 		}
-		$scope.service.list = $localStorage.profile
+		ProfileService.list = $localStorage.profile;
+		$scope.service = ProfileService;
 	}
 ]);
-app.controller('ProfileAddCtrl', ['$scope', 'ProfileService',
-	function($scope, ProfileService) {
+app.controller('ProfileAddCtrl', ['$scope', 'ProfileService', 'CompareService',
+	function($scope, ProfileService, CompareService) {
 		$scope.$emit('init_page', {
 			title: 'Add',
 			navTopLeft: 'main/directive/menu.tpl.html',
-			navTopRight: 'profile/directive/add.tpl.html',
+			navTopRight: 'profile/directive/save.tpl.html',
 			navBottomRight: 'profile/directive/remove.tpl.html'
 		});
-		$scope.data = {};
-		$scope.service = ProfileService;
+		$scope.service = CompareService;
+		// ProfileService.temp = {};
+		$scope.data = ProfileService.temp;
 	}
 ]);
 app.controller('ProfileCheckCtrl', ['$scope', 'ProfileService',
@@ -42,8 +42,19 @@ app.controller('ProfileCheckCtrl', ['$scope', 'ProfileService',
 		$scope.service = ProfileService;
 	}
 ]);
-app.controller('RemoveCtrl', ['$scope',
-	function($scope) {
+app.controller('ProfileServiceCtrl', ['$scope', '$state', '$localStorage', 'ProfileService',
+	function($scope, $state, $localStorage, ProfileService) {
+		$scope.save = function() {
+			try {
+				ProfileService.save();
+				$localStorage.$default({
+					profile: ProfileService.list
+				});
+				$state.go('profile');
+			} catch (e) {
+				console.log(e);
+			}
+		};
 		$scope.remove = function() {
 			console.log("remove");
 		};

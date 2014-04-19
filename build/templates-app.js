@@ -110,7 +110,7 @@ angular.module("profile/directive/add.tpl.html", []).run(["$templateCache", func
 
 angular.module("profile/directive/remove.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("profile/directive/remove.tpl.html",
-    "<div ng-controller=\"RemoveCtrl\">\n" +
+    "<div ng-controller=\"ProfileServiceCtrl\">\n" +
     "	<div ng-click=\"remove()\" class=\"btn btn-navbar\">\n" +
     "		<i class=\"fa fa-trash-o\"></i> Remove\n" +
     "	</div>\n" +
@@ -119,7 +119,11 @@ angular.module("profile/directive/remove.tpl.html", []).run(["$templateCache", f
 
 angular.module("profile/directive/save.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("profile/directive/save.tpl.html",
-    "");
+    "<div ng-controller=\"ProfileServiceCtrl\">\n" +
+    "	<div ng-click=\"save()\" class=\"btn btn-navbar\">\n" +
+    "		Save\n" +
+    "	</div>\n" +
+    "</div>");
 }]);
 
 angular.module("profile/profile.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -145,17 +149,19 @@ angular.module("profile/profile_add.tpl.html", []).run(["$templateCache", functi
     "		<div bs-panel>\n" +
     "			<input type=\"text\" ng-model=\"data.name\" label=\"Name\" bs-input />\n" +
     "			<input type=\"text\" ng-model=\"data.owner\" label=\"Owner\" bs-input />\n" +
-    "			<input type=\"text\" ng-model=\"data.name\" label=\"Name\" bs-input />\n" +
     "			<input type=\"text\" ng-model=\"data.type\" label=\"Type\" href=\"#type\" toggle=\"on\" readonly=\"readonly\" bs-input />\n" +
     "		</div>\n" +
     "		<div overlay=\"type\">\n" +
-    "			<h4 class=\"overlay-title\">First Overlay</h4>    \n" +
+    "			<h4 class=\"overlay-title\">Type</h4>    \n" +
     "			<div class=\"list-group\">\n" +
-    "				<a class=\"list-group-item\" ng-click=\"data.type='aaa'\" href=\"#type\" toggle=\"off\">\n" +
-    "					Edit Data \n" +
+    "				<a class=\"list-group-item\" ng-click=\"data.type = service.type.FUND.title\" href=\"#type\" toggle=\"off\">\n" +
+    "					{{service.type.FUND.title}}\n" +
     "				</a>\n" +
-    "				<a class=\"list-group-item\" ng-click=\"data.type='aaa'\" href=\"#type\" toggle=\"off\">\n" +
-    "					Check Balance \n" +
+    "				<a class=\"list-group-item\" ng-click=\"data.type = service.type.LOTTERY.title\" href=\"#type\" toggle=\"off\">\n" +
+    "					{{service.type.LOTTERY.title}}\n" +
+    "				</a>\n" +
+    "				<a class=\"list-group-item\" ng-click=\"data.type = service.type.BOND.title\" href=\"#type\" toggle=\"off\">\n" +
+    "					{{service.type.BOND.title}}\n" +
     "				</a>\n" +
     "			</div>  \n" +
     "		</div>\n" +
