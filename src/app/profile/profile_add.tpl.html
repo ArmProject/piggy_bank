@@ -1,1 +1,21 @@
-<div>add profile</div>
+<div class="scrollable">
+	<div class="scrollable-content">
+		<div bs-panel>
+			<input type="text" ng-model="data.name" label="Name" bs-input />
+			<input type="text" ng-model="data.owner" label="Owner" bs-input />
+			<input type="text" ng-model="data.name" label="Name" bs-input />
+			<input type="text" ng-model="data.type" label="Type" href="#type" toggle="on" readonly="readonly" bs-input />
+		</div>
+		<div overlay="type">
+			<h4 class="overlay-title">First Overlay</h4>    
+			<div class="list-group">
+				<a class="list-group-item" ng-click="data.type='aaa'" href="#type" toggle="off">
+					Edit Data 
+				</a>
+				<a class="list-group-item" ng-click="data.type='aaa'" href="#type" toggle="off">
+					Check Balance 
+				</a>
+			</div>  
+		</div>
+	</div>  
+</div>

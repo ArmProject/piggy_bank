@@ -17,7 +17,11 @@ app.config(["$stateProvider", "$urlRouterProvider",
 		}).state('profile_add', {
 			url: '/profile/add',
 			templateUrl: 'profile/profile_add.tpl.html',
-			controller: 'ProfileCtrl'
+			controller: 'ProfileAddCtrl'
+		}).state('profile_check', {
+			url: '/profile/check',
+			templateUrl: 'profile/profile_check.tpl.html',
+			controller: 'ProfileCheckCtrl'
 		}).state('home', {
 			url: '/home',
 			templateUrl: 'home/home.tpl.html',

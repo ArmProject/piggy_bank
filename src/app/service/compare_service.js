@@ -4,16 +4,25 @@ app.service('CompareService', [
 		var self = this;
 		this.type = {
 			FUND: {
-				title: "fund",
-				list: ["a", "b"]
+				title: "Fund",
+				list: {
+					"bank1": ["a", "b"],
+					"bank2": ["a", "b"]
+				}
 			},
 			LOTTERY: {
-				title: "lottery",
-				list: ["c", "d"]
+				title: "Lottery",
+				list: {
+					"bank1": ["a", "b"],
+					"bank2": ["a", "b"]
+				}
 			},
 			BOND: {
-				title: "bond",
-				list: ["e", "f"]
+				title: "Bond",
+				list: {
+					"bank1": ["a", "b"],
+					"bank2": ["a", "b"]
+				}
 			}
 		};
 

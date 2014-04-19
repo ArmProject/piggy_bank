@@ -1,2 +1,13 @@
-<div>{{data.title}}</div>
-<div ng-repeat="list in data.list">{{list}}</div>
+<div class="list-group">
+	<div ng-repeat="(name,parent) in service.list">
+		<div class="list-group-item list-group-item-heading">
+			<span>{{name}}</span>
+		</div>	
+		<div ng-repeat="child in parent" >
+			<div  class="list-group-item">
+				<input type="checkbox" ng-model="checked[name][$index]"/>
+				{{child}}
+			</div>
+		</div>
+	</div>
+</div>
