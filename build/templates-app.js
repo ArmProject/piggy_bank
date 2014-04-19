@@ -2,7 +2,8 @@ angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/
 
 angular.module("compare/compare.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("compare/compare.tpl.html",
-    "");
+    "<div>{{data.title}}</div>\n" +
+    "<div ng-repeat=\"list in data.list\">{{list}}</div>");
 }]);
 
 angular.module("compare/directive/item.tpl.html", []).run(["$templateCache", function($templateCache) {
@@ -24,36 +25,36 @@ angular.module("main/directive/menu.tpl.html", []).run(["$templateCache", functi
 
 angular.module("main/directive/sidebar.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("main/directive/sidebar.tpl.html",
-    "\n" +
-    "<div class=\"scrollable\"  toggle=\"off\" bubble target=\"mainSidebar\">\n" +
+    "<h5 class=\"app-name\">Mobile Angular UI</h5>\n" +
+    "<div class=\"scrollable\" toggle=\"off\" bubble target=\"mainSidebar\">\n" +
     "	<div class=\"scrollable-content\">\n" +
-    "		<h5 class=\"app-name\">Mobile Angular UI</h5>\n" +
     "		<div class=\"list-group\">\n" +
-    "			<a class=\"list-group-item\" href=\"#/\">\n" +
-    "				Home \n" +
+    "			<div class=\"list-group-item list-group-item-heading\">\n" +
+    "				<span>Compare</span>\n" +
+    "			</div>\n" +
+    "			<a class=\"list-group-item sub-group\" ui-sref=\"compare_fund\">\n" +
+    "				กองทุน\n" +
     "				<i class=\"fa fa-chevron-right pull-right\"></i>\n" +
     "			</a>\n" +
-    "			<a class=\"list-group-item\" href=\"#/\">\n" +
-    "				Profile\n" +
+    "			<a class=\"list-group-item sub-group\" ui-sref=\"compare_lottery\">\n" +
+    "				สลาก\n" +
     "				<i class=\"fa fa-chevron-right pull-right\"></i>\n" +
     "			</a>\n" +
-    "			<a class=\"list-group-item\" href=\"#/\">\n" +
-    "				Toggle \n" +
+    "			<a class=\"list-group-item sub-group\" ui-sref=\"compare_bond\">\n" +
+    "				พันธ์บัตร \n" +
     "				<i class=\"fa fa-chevron-right pull-right\"></i>\n" +
     "			</a>\n" +
     "		</div>\n" +
-    "		<h5 class=\"app-name\">Mobile Angular UI</h5>\n" +
     "		<div class=\"list-group\">\n" +
-    "			<a class=\"list-group-item\" href=\"#/\">\n" +
-    "				Home \n" +
+    "			<div class=\"list-group-item list-group-item-heading\">\n" +
+    "				<span>My Port</span>\n" +
+    "			</div>\n" +
+    "			<a class=\"list-group-item sub-group\" href=\"#/edit_data\">\n" +
+    "				Edit Data \n" +
     "				<i class=\"fa fa-chevron-right pull-right\"></i>\n" +
     "			</a>\n" +
-    "			<a class=\"list-group-item\" href=\"#/\">\n" +
-    "				Profile\n" +
-    "				<i class=\"fa fa-chevron-right pull-right\"></i>\n" +
-    "			</a>\n" +
-    "			<a class=\"list-group-item\" href=\"#/\">\n" +
-    "				Toggle \n" +
+    "			<a class=\"list-group-item sub-group\" href=\"#/check_balance\">\n" +
+    "				Check Balance \n" +
     "				<i class=\"fa fa-chevron-right pull-right\"></i>\n" +
     "			</a>\n" +
     "		</div>\n" +

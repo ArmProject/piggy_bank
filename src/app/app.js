@@ -22,10 +22,27 @@ app.config(["$stateProvider", "$urlRouterProvider",
 			url: '/home',
 			templateUrl: 'home/home.tpl.html',
 			controller: 'HomeCtrl'
-		}).state('compare', {
-			url: '/compare',
+		}).state('compare_fund', {
+			url: '/compare/fund',
 			templateUrl: 'compare/compare.tpl.html',
-			controller: 'CompareCtrl'
+			controller: 'CompareCtrl',
+			data: {
+				type: "FUND"
+			}
+		}).state('compare_lottery', {
+			url: '/compare/lottery',
+			templateUrl: 'compare/compare.tpl.html',
+			controller: 'CompareCtrl',
+			data: {
+				type: "LOTTERY"
+			}
+		}).state('compare_bond', {
+			url: '/compare/bond',
+			templateUrl: 'compare/compare.tpl.html',
+			controller: 'CompareCtrl',
+			data: {
+				type: "BOND"
+			}
 		});
 	}
 ]);
