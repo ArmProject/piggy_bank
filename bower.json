@@ -10,5 +10,6 @@
   },
   "dependencies": {
     "mobile-angular-ui": "~1.1.0-beta.7",
+    "ngstorage": "~0.3.0"
   }
 }

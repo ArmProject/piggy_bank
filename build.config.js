@@ -70,6 +70,7 @@ module.exports = {
       'vendor/mobile-angular-ui/dist/js/mobile-angular-ui.min.js',
       'vendor/mobile-angular-ui/dist/js/mobile-angular-ui-touch-fastclick.min.js',
       'vendor/mobile-angular-ui/dist/js/mobile-angular-ui-scrollable-overthrow.min.js',
+      'vendor/ngstorage/ngStorage.js',
       'vendor/jquery/dist/jquery.js',
 
       // 'vendor/font-awesome/css/font-awesome.min.css',

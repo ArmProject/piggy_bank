@@ -1,4 +1,4 @@
-angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/remove.tpl.html', 'profile/profile.tpl.html', 'profile/profile_add.tpl.html', 'profile/profile_check.tpl.html']);
+angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/remove.tpl.html', 'profile/directive/save.tpl.html', 'profile/profile.tpl.html', 'profile/profile_add.tpl.html', 'profile/profile_check.tpl.html']);
 
 angular.module("compare/compare.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("compare/compare.tpl.html",
@@ -115,6 +115,11 @@ angular.module("profile/directive/remove.tpl.html", []).run(["$templateCache", f
     "		<i class=\"fa fa-trash-o\"></i> Remove\n" +
     "	</div>\n" +
     "</div>");
+}]);
+
+angular.module("profile/directive/save.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("profile/directive/save.tpl.html",
+    "");
 }]);
 
 angular.module("profile/profile.tpl.html", []).run(["$templateCache", function($templateCache) {

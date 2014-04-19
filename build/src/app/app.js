@@ -4,6 +4,7 @@ var app = angular.module('app', [
 	'mobile-angular-ui',
 	'mobile-angular-ui.touch',
 	'mobile-angular-ui.scrollable',
+	'ngStorage',
 	'ui.router'
 ]);
 

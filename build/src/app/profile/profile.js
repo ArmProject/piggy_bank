@@ -1,5 +1,5 @@
-app.controller('ProfileCtrl', ['$scope', 'ProfileService',
-	function($scope, ProfileService) {
+app.controller('ProfileCtrl', ['$scope', '$localStorage', 'ProfileService',
+	function($scope, $localStorage, ProfileService) {
 		$scope.$emit('init_page', {
 			title: 'Profile',
 			navTopLeft: 'main/directive/menu.tpl.html',
@@ -7,9 +7,15 @@ app.controller('ProfileCtrl', ['$scope', 'ProfileService',
 			navBottomRight: 'profile/directive/remove.tpl.html'
 		});
 		$scope.service = ProfileService;
-		$scope.service.list.push({
-			name: "example"
-		})
+
+		if (angular.isUndefined($localStorage.profile)) {
+			$localStorage.$default({
+				profile: [{
+					name: "example"
+				}]
+			});
+		}
+		$scope.service.list = $localStorage.profile
 	}
 ]);
 app.controller('ProfileAddCtrl', ['$scope', 'ProfileService',
