@@ -1,4 +1,4 @@
-angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/remove.tpl.html', 'profile/directive/save.tpl.html', 'profile/profile.tpl.html', 'profile/profile_add.tpl.html', 'profile/profile_check.tpl.html']);
+angular.module('templates-app', ['compare/compare.tpl.html', 'compare/directive/compare.tpl.html', 'compare/directive/item.tpl.html', 'home/home.tpl.html', 'main/directive/menu.tpl.html', 'main/directive/sidebar.tpl.html', 'main/nav_bottom.tpl.html', 'main/nav_top.tpl.html', 'profile/directive/add.tpl.html', 'profile/directive/back.tpl.html', 'profile/directive/check.tpl.html', 'profile/directive/remove.tpl.html', 'profile/directive/save.tpl.html', 'profile/profile.tpl.html', 'profile/profile_add.tpl.html', 'profile/profile_check.tpl.html']);
 
 angular.module("compare/compare.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("compare/compare.tpl.html",
@@ -10,11 +10,20 @@ angular.module("compare/compare.tpl.html", []).run(["$templateCache", function($
     "		<div ng-repeat=\"child in parent\" >\n" +
     "			<div  class=\"list-group-item\">\n" +
     "				<switch ng-model=\"checked[name][$index]\" style=\"float:left;\"></switch>\n" +
-    "				<span>{{child}}</span>\n" +
+    "				<span>{{child.name}}</span>\n" +
     "				<!-- <input type=\"checkbox\" ng-model=\"checked[name][$index]\"/>\n" +
     "				{{child}} -->\n" +
     "			</div>\n" +
     "		</div>\n" +
+    "	</div>\n" +
+    "</div>");
+}]);
+
+angular.module("compare/directive/compare.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("compare/directive/compare.tpl.html",
+    "<div ng-controller=\"CompareServiceCtrl\">\n" +
+    "	<div ng-click=\"compare()\" class=\"btn btn-navbar\">\n" +
+    "		Compare\n" +
     "	</div>\n" +
     "</div>");
 }]);
@@ -110,6 +119,25 @@ angular.module("profile/directive/add.tpl.html", []).run(["$templateCache", func
     "");
 }]);
 
+angular.module("profile/directive/back.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("profile/directive/back.tpl.html",
+    "<div ng-controller=\"ProfileServiceCtrl\">\n" +
+    "	<div ng-click=\"back()\" class=\"btn btn-navbar\">\n" +
+    "		Back\n" +
+    "	</div>\n" +
+    "</div>");
+}]);
+
+angular.module("profile/directive/check.tpl.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("profile/directive/check.tpl.html",
+    "<div ng-controller=\"ProfileServiceCtrl\" ng-init=\"check()\">\n" +
+    "	<div class=\"btn-navbar\">\n" +
+    "		Total\n" +
+    "	</div>\n" +
+    "	<!-- <input readonly=\"readonly\"> -->\n" +
+    "</div>");
+}]);
+
 angular.module("profile/directive/remove.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("profile/directive/remove.tpl.html",
     "<div ng-controller=\"ProfileServiceCtrl\">\n" +
@@ -173,5 +201,11 @@ angular.module("profile/profile_add.tpl.html", []).run(["$templateCache", functi
 
 angular.module("profile/profile_check.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("profile/profile_check.tpl.html",
-    "");
+    "<div class=\"list-group\">\n" +
+    "	<div ng-repeat=\"data in service.list\">	\n" +
+    "		<div  class=\"list-group-item\">\n" +
+    "			<span>{{data.name}}</span>\n" +
+    "		</div>\n" +
+    "	</div>\n" +
+    "</div>");
 }]);

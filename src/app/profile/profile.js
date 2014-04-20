@@ -21,7 +21,7 @@ app.controller('ProfileAddCtrl', ['$scope', 'ProfileService', 'CompareService',
 	function($scope, ProfileService, CompareService) {
 		$scope.$emit('init_page', {
 			title: 'Add',
-			navTopLeft: 'main/directive/menu.tpl.html',
+			navTopLeft: 'profile/directive/back.tpl.html',
 			navTopRight: 'profile/directive/save.tpl.html',
 			navBottomRight: 'profile/directive/remove.tpl.html'
 		});
@@ -30,15 +30,15 @@ app.controller('ProfileAddCtrl', ['$scope', 'ProfileService', 'CompareService',
 		$scope.data = ProfileService.temp;
 	}
 ]);
-app.controller('ProfileCheckCtrl', ['$scope', 'ProfileService',
-	function($scope, ProfileService) {
+app.controller('ProfileCheckCtrl', ['$scope', '$localStorage', 'ProfileService',
+	function($scope, $localStorage, ProfileService) {
 		$scope.$emit('init_page', {
 			title: 'Check',
 			navTopLeft: 'main/directive/menu.tpl.html',
 			navTopRight: 'profile/directive/add.tpl.html',
-			navBottomRight: 'profile/directive/remove.tpl.html'
+			navBottomRight: 'profile/directive/check.tpl.html'
 		});
-		$scope.data = {};
+		ProfileService.list = $localStorage.profile;
 		$scope.service = ProfileService;
 	}
 ]);
@@ -57,6 +57,9 @@ app.controller('ProfileServiceCtrl', ['$scope', '$state', '$localStorage', 'Prof
 		};
 		$scope.remove = function() {
 			console.log("remove");
+		};
+		$scope.back = function() {
+			$state.go('profile');
 		};
 	}
 ]);

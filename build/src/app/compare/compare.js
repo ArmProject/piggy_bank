@@ -6,7 +6,7 @@ app.controller('CompareCtrl', ['$scope', '$state', 'CompareService',
 		$scope.$emit('init_page', {
 			title: $scope.service.title,
 			navTopLeft: 'main/directive/menu.tpl.html',
-			navTopRight: 'profile/directive/add.tpl.html',
+			navTopRight: 'compare/directive/compare.tpl.html',
 		});
 		$scope.checked = {}
 		angular.forEach($scope.service.list, function(parent, name) {
@@ -17,3 +17,10 @@ app.controller('CompareCtrl', ['$scope', '$state', 'CompareService',
 		});
 	}
 ]);
+app.controller('CompareServiceCtrl', ['$scope', 'CompareService',
+	function($scope, CompareService) {
+		$scope.compare = function() {
+
+		}
+	}
+])

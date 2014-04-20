@@ -71,16 +71,14 @@ module.exports = {
       'vendor/mobile-angular-ui/dist/js/mobile-angular-ui-touch-fastclick.min.js',
       'vendor/mobile-angular-ui/dist/js/mobile-angular-ui-scrollable-overthrow.min.js',
       'vendor/ngstorage/ngStorage.js',
-      'vendor/jquery/dist/jquery.js',
+      'vendor/jquery/dist/jquery.js'
 
-      // 'vendor/font-awesome/css/font-awesome.min.css',
-      // 'vendor/font-awesome/fonts/*',
-      'vendor/mobile-angular-ui/dist/css/mobile-angular-ui-base.css',
-      'vendor/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css',
-      'vendor/mobile-angular-ui/dist/fonts/*'
     ],
     css: [
+      'vendor/mobile-angular-ui/dist/css/mobile-angular-ui-base.css',
+      'vendor/mobile-angular-ui/dist/css/mobile-angular-ui-desktop.css'
     ],
-    assets: []
+    assets: [
+    ]
   },
 };

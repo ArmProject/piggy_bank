@@ -1,5 +1,6 @@
 {
   "name": "money",
+  "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",

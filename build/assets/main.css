@@ -1,9 +1,0 @@
-.sub-group {
-  padding-left: 30px;
-}
-
-@media (min-width: 900px) {
-  .navbar-brand-center {
-    text-align: center;
-  }
-}
