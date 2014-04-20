@@ -9,7 +9,8 @@ app.controller('ProfileCtrl', ['$scope', '$localStorage', 'ProfileService',
 		if (angular.isUndefined($localStorage.profile)) {
 			$localStorage.$default({
 				profile: [{
-					name: "example"
+					name: "example",
+					type: "Fund"
 				}]
 			});
 		}
@@ -36,10 +37,11 @@ app.controller('ProfileCheckCtrl', ['$scope', '$localStorage', 'ProfileService',
 			title: 'Check',
 			navTopLeft: 'main/directive/menu.tpl.html',
 			navTopRight: 'profile/directive/add.tpl.html',
-			navBottomRight: 'profile/directive/check.tpl.html'
+			navBottomRight: 'profile/directive/total.tpl.html'
 		});
 		ProfileService.list = $localStorage.profile;
 		$scope.service = ProfileService;
+		ProfileService.check();
 	}
 ]);
 app.controller('ProfileServiceCtrl', ['$scope', '$state', '$localStorage', 'ProfileService',
@@ -55,6 +57,7 @@ app.controller('ProfileServiceCtrl', ['$scope', '$state', '$localStorage', 'Prof
 				console.log(e);
 			}
 		};
+		$scope.service = ProfileService;
 		$scope.remove = function() {
 			console.log("remove");
 		};
