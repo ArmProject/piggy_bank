@@ -5,8 +5,10 @@
 		</div>	
 		<div ng-repeat="child in parent" >
 			<div  class="list-group-item">
-				<input type="checkbox" ng-model="checked[name][$index]"/>
-				{{child}}
+				<switch ng-model="checked[name][$index]" style="float:left;"></switch>
+				<span>{{child}}</span>
+				<!-- <input type="checkbox" ng-model="checked[name][$index]"/>
+				{{child}} -->
 			</div>
 		</div>
 	</div>

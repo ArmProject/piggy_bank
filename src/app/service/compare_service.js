@@ -6,22 +6,58 @@ app.service('CompareService', [
 			FUND: {
 				title: "Fund",
 				list: {
-					"bank1": ["a", "b"],
-					"bank2": ["a", "b"]
+					"bank1": [{
+						name: "a",
+						rate: 0
+					}, {
+						name: "b",
+						rate: 1
+					}],
+					"bank2": [{
+						name: "a",
+						rate: 0
+					}, {
+						name: "b",
+						rate: 1
+					}]
 				}
 			},
 			LOTTERY: {
 				title: "Lottery",
 				list: {
-					"bank1": ["a", "b"],
-					"bank2": ["a", "b"]
+					"bank1": [{
+						name: "a",
+						rate: 0
+					}, {
+						name: "b",
+						rate: 1
+					}],
+					"bank2": [{
+						name: "a",
+						rate: 0
+					}, {
+						name: "b",
+						rate: 1
+					}]
 				}
 			},
 			BOND: {
 				title: "Bond",
 				list: {
-					"bank1": ["a", "b"],
-					"bank2": ["a", "b"]
+					"bank1": [{
+						name: "a",
+						rate: 0
+					}, {
+						name: "b",
+						rate: 1
+					}],
+					"bank2": [{
+						name: "a",
+						rate: 0
+					}, {
+						name: "b",
+						rate: 1
+					}]
 				}
 			}
 		};

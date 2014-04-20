@@ -9,8 +9,10 @@ angular.module("compare/compare.tpl.html", []).run(["$templateCache", function($
     "		</div>	\n" +
     "		<div ng-repeat=\"child in parent\" >\n" +
     "			<div  class=\"list-group-item\">\n" +
-    "				<input type=\"checkbox\" ng-model=\"checked[name][$index]\"/>\n" +
-    "				{{child}}\n" +
+    "				<switch ng-model=\"checked[name][$index]\" style=\"float:left;\"></switch>\n" +
+    "				<span>{{child}}</span>\n" +
+    "				<!-- <input type=\"checkbox\" ng-model=\"checked[name][$index]\"/>\n" +
+    "				{{child}} -->\n" +
     "			</div>\n" +
     "		</div>\n" +
     "	</div>\n" +
@@ -36,7 +38,7 @@ angular.module("main/directive/menu.tpl.html", []).run(["$templateCache", functi
 
 angular.module("main/directive/sidebar.tpl.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("main/directive/sidebar.tpl.html",
-    "<h5 class=\"app-name\">Mobile Angular UI</h5>\n" +
+    "<h5 class=\"app-name\">Menu</h5>\n" +
     "<div class=\"scrollable\" toggle=\"off\" bubble target=\"mainSidebar\">\n" +
     "	<div class=\"scrollable-content\">\n" +
     "		<div class=\"list-group\">\n" +
