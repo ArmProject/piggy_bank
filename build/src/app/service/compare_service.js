@@ -2,6 +2,20 @@ app.service('CompareService', [
 
 	function() {
 		var self = this;
+		this.data = {
+			FUND: {
+				profit: {
+					name: "profit",
+					value: 0
+				},
+				amount:{
+					name: "amount",
+					value: 1
+				}
+			},
+			LOTTERY: {},
+			BOND: {}
+		};
 		this.type = {
 			FUND: {
 				title: "Fund",

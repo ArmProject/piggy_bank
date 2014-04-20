@@ -29,6 +29,12 @@ app.controller('ProfileAddCtrl', ['$scope', 'ProfileService', 'CompareService',
 		$scope.service = CompareService;
 		// ProfileService.temp = {};
 		$scope.data = ProfileService.temp;
+		$scope.$watch('data.type', function(newV, oldV) {
+			if (newV != oldV) {
+				var type = $scope.data.type;
+				$scope.data.data = CompareService.data[type];
+			}
+		})
 	}
 ]);
 app.controller('ProfileCheckCtrl', ['$scope', '$localStorage', 'ProfileService',
